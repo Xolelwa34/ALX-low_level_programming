@@ -1,2 +1,2 @@
-0x0E. C - Structures, typedef
+0x10. C - Variadic functions
 
