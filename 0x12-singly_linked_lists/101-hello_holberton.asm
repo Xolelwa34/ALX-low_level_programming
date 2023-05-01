@@ -13,4 +13,4 @@ main:
 
         section .data
 
-format: db      "Hello, Holberton", 10,0
+format: db      "Hello, Holberton", 10
