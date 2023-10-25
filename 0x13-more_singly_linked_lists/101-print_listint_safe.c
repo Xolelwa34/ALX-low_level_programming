@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 /**
   * print_listint_safe -prints elementsof linked list
   * @head: pointer to the head of the list
