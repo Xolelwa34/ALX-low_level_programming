@@ -1,5 +1,4 @@
-#include <unistd.h>
-#include <fcntl.h>
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -10,41 +9,21 @@
  *
  * Return: actual number of letters that can print and read
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+ssize_t read_textfile(const char *filename, size_t letters);
 {
-	int file = 0;
-	int length = 0;
-	int words = 0;
-	char *buffer;
-
-	if (filename == NULL)
-		return (0);
-
-	buffer = malloc(letters);
-	if (buffer == NULL)
-		return (0);
+	char buffer;
+	ssize_t file;
+	ssize_t w;
+	ssize_t len;
 
 	file = open(filename, O_RDONLY);
 	if (file == -1)
-	{
-		free(buffer);
 		return (0);
-	}
+	buffer = malloc(sizeof(char) * letters);
+	len = read(len, buffer, letters);
+	w = write(STDOUT_FILENO, buffer, len);
 
-	length = read(fd, buffer, letters);
-	if (length == -1)
-	{
-		free(buffer);
-		return (0);
-	}
-
-	words = write(STDOUT_FILENO, buffer, length);
-	if (words == -1 || words != length)
-	{
-		free(buffer);
-		return (0);
-	}
-	close(file);
 	free(buffer);
-	return (words);
+	close(file);
+	return(w);
 }
