@@ -3,19 +3,21 @@
 /**
  * print_dlistint - prints the elements of dlistint_t
  * @h: pointer to list
+ *
  * Return: nodes number
- **/
-size_t print_dlistint(const dlistint_t *h)
+ */
+size_t print_listint(const listint_t *h)
 {
-	const dlistint_t *node = h;
-	size_t count = 0;
+	size_t new_nodes = 0;
+	const listint_t *h;
 
-	while (node)
+	h = h;
+	while (h)
 	{
-		printf("%i\n", node->n);
-		count++;
-	 	node = node->next;
+		printf("%d\n", h->n);
+		h = h->next;
+		new_nodes++;
 	}
-
-	return (count);
+	return (new_nodes);
 }
+
