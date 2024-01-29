@@ -1,4 +1,8 @@
 #include "lists.h"
+<<<<<<< HEAD
+=======
+#include <stdlib.h>
+>>>>>>> print list
 
 /**
  * dlistint_len - takes pointer to the head of doubly linked list
