@@ -9,25 +9,25 @@
 
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *hasht;
-	unsigned long int idx = 0;
+	hash_table_t *ht;
+	unsigned long int a = 0;
 
 	if (size <= 0)
 		return (NULL);
 
-	hasht = malloc(sizeof(hash_table_t));
-	if (!hasht)
+	ht = malloc(sizeof(hash_table_t));
+	if (!ht)
 		return (NULL);
-        hasht->size = size;
-	hasht->array = malloc(sizeof(hash_node_t *) * size);
-	if (hasht->array == NULL)
+        ht->size = size;
+	ht->array = malloc(sizeof(hash_node_t *) * size);
+	if (ht->array == NULL)
 	{
-		free(hasht);
+		free(ht);
 		return (NULL);
 	}
 
-	while (idx < size)
-	i	hasht->array[idx++] = NULL;
-	return (hasht);
+	while (a < size)
+	i	ht->array[a++] = NULL;
+	return (ht);
 }
 
