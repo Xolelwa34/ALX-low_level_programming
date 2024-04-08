@@ -1,5 +1,5 @@
 #include "lists.h"
-#include <string.h>
+#include <stdlib.h>
 /**
  * add_nodeint - adds node to the listint linked list
  * @head: pointer to a list_t linked list
@@ -7,15 +7,20 @@
  *
  * Return: pointer to the head of the list
  */
-listint_t *add_nodeint(listint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	listint_t *new_head;
+	dlistint_t *count;
 
-	new_head = *head;
-	*head = malloc(sizeof(listint_t));
-	if (!*head)
+	if (head == NULL)
 		return (NULL);
-	(*head)->n = n;
-	(*head)->next = new_head;
-	return (*head);
+	count = malloc(sizeof(dlistint_t));
+	if (count == NULL)
+		return (NULL);
+	count->n = n;
+	count->prev = NULL;
+	count->next = *head;
+	*head = count;
+	if (count->next != NULL)
+		(count->next)->prev = count;
+	return (count);
 }
