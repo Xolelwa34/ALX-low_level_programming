@@ -1,6 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
-
 
 /**
  * dlistint_len - takes pointer to the head of doubly linked list
